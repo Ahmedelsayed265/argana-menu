@@ -2,9 +2,26 @@
 
 header {
   position: relative;
-  height: 24rem;
+  height: 28rem;
   overflow: hidden;
   background: linear-gradient(to right, #78350f, #b45309);
+
+  .logo {
+    padding: 4px;
+    width: 100px;
+    margin-bottom: 1rem;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 99;
+    background: #fff;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
 
   .hero-image {
     width: 100%;
@@ -40,6 +57,7 @@ header {
       display: flex;
       align-items: center;
       gap: 8px;
+      color: #f77e22;
 
       p {
         margin: 0;
@@ -58,14 +76,10 @@ header {
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: 1rem;
       color: #ffffff;
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto 2rem;
-
-      @media screen and (max-width: 768px) {
-        font-size: 1rem;
-      }
     }
 
     .hero-buttons {
@@ -98,9 +112,37 @@ header {
 }
 
 main {
+  #cart_btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(to right, #f54a00, #ff6b28);
+    padding: 8px 24px;
+    z-index: 99;
+    border-radius: 60px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    h6 {
+      margin: 0;
+      font-size: 14px;
+      text-align: start;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    i {
+      font-size: 24px;
+    }
+  }
+
   .filter {
     top: 0;
-    padding: 16px;
+    padding: 16px 0;
     position: sticky;
     z-index: 100;
     background: #fff;
@@ -191,8 +233,17 @@ main {
   }
 
   .menu {
-    padding: 40px 0;
+    padding: 16px 0;
     min-height: 400px;
+
+    .filter {
+      background: transparent;
+      box-shadow: none;
+      display: flex;
+      gap: 8px;
+      z-index: 0;
+      position: static;
+    }
 
     .menu_item {
       width: 100%;

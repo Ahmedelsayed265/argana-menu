@@ -68,6 +68,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 $main: #223d5b;
 $dark: #181412;
 $white: #fff;

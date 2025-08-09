@@ -39,6 +39,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -221,9 +225,26 @@ form button:hover {
 
 header {
   position: relative;
-  height: 24rem;
+  height: 28rem;
   overflow: hidden;
   background: linear-gradient(to right, #78350f, #b45309);
+}
+header .logo {
+  padding: 4px;
+  width: 100px;
+  margin-bottom: 1rem;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 99;
+  background: #fff;
+  overflow: hidden;
+}
+header .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 header .hero-image {
   width: 100%;
@@ -258,6 +279,7 @@ header .hero-content .reviews {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: #f77e22;
 }
 header .hero-content .reviews p {
   margin: 0;
@@ -274,15 +296,10 @@ header .hero-content h1 {
   }
 }
 header .hero-content p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #ffffff;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto 2rem;
-}
-@media screen and (max-width: 768px) {
-  header .hero-content p {
-    font-size: 1rem;
-  }
 }
 header .hero-content .hero-buttons {
   display: flex;
@@ -311,9 +328,33 @@ header .hero-content .hero-buttons a:hover {
   }
 }
 
+main #cart_btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(to right, #f54a00, #ff6b28);
+  padding: 8px 24px;
+  z-index: 99;
+  border-radius: 60px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+main #cart_btn h6 {
+  margin: 0;
+  font-size: 14px;
+  text-align: start;
+}
+main #cart_btn span {
+  font-size: 12px;
+}
+main #cart_btn i {
+  font-size: 24px;
+}
 main .filter {
   top: 0;
-  padding: 16px;
+  padding: 16px 0;
   position: sticky;
   z-index: 100;
   background: #fff;
@@ -395,8 +436,16 @@ main .filter .category_btn.active, main .filter .category_btn:hover {
   color: #fff;
 }
 main .menu {
-  padding: 40px 0;
+  padding: 16px 0;
   min-height: 400px;
+}
+main .menu .filter {
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  gap: 8px;
+  z-index: 0;
+  position: static;
 }
 main .menu .menu_item {
   width: 100%;

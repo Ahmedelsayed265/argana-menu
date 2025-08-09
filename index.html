@@ -50,6 +50,11 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
+
+            <div class="logo">
+                <img src="images/logo.jpg" alt="">
+            </div>
+
             <div class="reviews">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i>
@@ -64,6 +69,7 @@
                 </div>
             </div>
 
+
             <h1>ARGANA FALAFEL</h1>
             <p class="hero-tagline">Authentic Mediterranean & Moroccan Cuisine | Elevating Events with Exquisite
                 Catering Services | Fresh, Flavorful, and Made with Love</p>
@@ -77,33 +83,22 @@
                 </a>
             </div>
         </div>
+
+
     </header>
 
     <main>
+        <button id="cart_btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="fa-regular fa-cart-shopping"></i>
+
+            <div>
+                <h6>Cart</h6>
+                <span>2 Items</span>
+            </div>
+        </button>
+
         <div class="filter">
-            <div class="container">
-                <div class="col-12 p-2 d-flex gap-2">
-                    <div class="serach_box">
-                        <i class="fa-regular fa-magnifying-glass"></i>
-                        <input type="text" id="search_input" placeholder="Search for dishes">
-                    </div>
-
-                    <div class="view_method">
-                        <button class="active" id="grid_view">
-                            <i class="fa-regular fa-grid-2"></i>
-                        </button>
-
-                        <button id="list_view">
-                            <i class="fa-regular fa-list"></i>
-                        </button>
-
-                        <button id="cart" data-bs-toggle="modal" data-bs-target="#cartModal">
-                            <span>2</span>
-                            <i class="fa-regular fa-cart-shopping"></i> Cart
-                        </button>
-                    </div>
-                </div>
-
+            <div class="container p-0">
                 <div class="col-12 p-2">
                     <div class="swiper category_swiper">
                         <div class="swiper-wrapper">
@@ -156,6 +151,25 @@
         <section class="menu">
             <div class="container">
                 <div class="row">
+                    <div class="col-12 p-2">
+                        <div class="filter">
+                            <div class="serach_box">
+                                <i class="fa-regular fa-magnifying-glass"></i>
+                                <input type="text" id="search_input" placeholder="Search for dishes">
+                            </div>
+
+                            <div class="view_method">
+                                <button class="active" id="grid_view">
+                                    <i class="fa-regular fa-grid-2"></i>
+                                </button>
+
+                                <button id="list_view">
+                                    <i class="fa-regular fa-list"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
                     <div class="col-lg-3 col-6 p-2 grid_item">
                         <div class="menu_item">
                             <div class="menu_item_img">
