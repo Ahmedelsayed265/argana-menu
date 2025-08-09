@@ -136,9 +136,13 @@ button {
 .modal-header .btn-close:hover {
   background: #e8e8e8 !important;
 }
-.modal-header h6 {
-  color: #181412;
-  margin-bottom: 0;
+.modal-header h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+.modal-header h5 i {
+  color: #f54a00;
 }
 
 .modal-content {
@@ -156,26 +160,46 @@ button {
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+}
+form .form_group {
+  display: flex;
+  gap: 16px;
+}
+@media screen and (max-width: 768px) {
+  form .form_group {
+    flex-direction: column;
+  }
 }
 form .input_field {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 8px;
+}
+form .input_field label {
+  font-size: 14px;
+  color: #1f2937;
+}
+form .input_field label i {
+  color: #f54a00;
 }
 form .input_field input,
 form .input_field textarea {
   height: 48px;
   padding: 12px 16px;
   border-radius: 12px;
+  font-size: 14px;
   border: 1px solid #e8e8e8;
 }
 form .input_field input::-moz-placeholder, form .input_field textarea::-moz-placeholder {
-  color: #989898;
+  color: #777;
+  font-size: 12px;
 }
 form .input_field input::placeholder,
 form .input_field textarea::placeholder {
-  color: #989898;
+  color: #777;
+  font-size: 12px;
 }
 form .input_field textarea {
   height: 100px;
@@ -187,7 +211,7 @@ form button {
   height: 48px;
   margin-top: 12px;
   border-radius: 12px;
-  background: #223d5b;
+  background: #202226;
   color: #fff;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -387,7 +411,7 @@ main .menu .menu_item .vegiterian {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: #1c9c49;
+  background: #3cc16b;
   color: #fff;
   font-size: 12px;
   padding: 4px 8px;
@@ -406,6 +430,7 @@ main .menu .menu_item img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  aspect-ratio: 3/2;
 }
 main .menu .menu_item .menu_item_info {
   padding: 16px;
@@ -430,23 +455,20 @@ main .menu .menu_item .menu_item_info .price_btn span {
   color: #f54a00;
 }
 main .menu .menu_item .menu_item_info .price_btn button {
-  padding: 8px 16px;
-  border: 1px solid #e2e2e2;
+  padding: 10px 16px;
   border-radius: 12px;
   font-size: 14px;
-  color: #505050;
+  color: #ffffff;
   transition: all 0.3s ease-in-out;
-  background: #fff;
+  background: #202226;
   margin-inline-start: auto;
 }
 main .menu .menu_item .menu_item_info .price_btn button:hover {
   background: #f54a00;
-  border-color: #f54a00;
-  color: #fff;
 }
 
 footer {
-  background: #1f2937;
+  background: #202226;
   color: #fff;
   padding: 32px 0 16px;
 }
@@ -474,6 +496,7 @@ footer ul li {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 14px;
 }
 footer ul li a {
   color: #fff;
@@ -484,4 +507,85 @@ footer .copy {
 }
 footer .copy p {
   margin: 16px 0 0;
+  font-size: 14px;
+}
+
+#cartModal .cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid #f3f3f3;
+}
+#cartModal .cart-item img {
+  width: 140px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+#cartModal .cart-item .cart-item-details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+#cartModal .cart-item .cart-item-details h6 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+#cartModal .cart-item .cart-item-details p {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: #f54a00;
+}
+#cartModal .cart-item .quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+#cartModal .cart-item .quantity-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fafafa;
+  color: #f54a00;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+#cartModal .cart-item .quantity-controls .total-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  padding-inline-start: 12px;
+}
+#cartModal .checkout {
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#cartModal .checkout h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+#cartModal .checkout h3 span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f54a00;
+}
+#cartModal .checkout button {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  background: #000000;
+  margin-inline-start: auto;
 }/*# sourceMappingURL=style.css.map */

@@ -205,7 +205,7 @@ main {
         position: absolute;
         top: 12px;
         right: 12px;
-        background: #1c9c49;
+        background: #3cc16b;
         color: #fff;
         font-size: 12px;
         padding: 4px 8px;
@@ -225,6 +225,7 @@ main {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        aspect-ratio: 3 / 2;
       }
 
       .menu_item_info {
@@ -253,19 +254,16 @@ main {
           }
 
           button {
-            padding: 8px 16px;
-            border: 1px solid #e2e2e2;
+            padding: 10px 16px;
             border-radius: 12px;
             font-size: 14px;
-            color: #505050;
+            color: #ffffff;
             transition: all 0.3s ease-in-out;
-            background: #fff;
+            background: #202226;
             margin-inline-start: auto;
 
             &:hover {
               background: #f54a00;
-              border-color: #f54a00;
-              color: #fff;
             }
           }
         }
@@ -275,7 +273,7 @@ main {
 }
 
 footer {
-  background: #1f2937;
+  background: #202226;
   color: #fff;
   padding: 32px 0 16px;
 
@@ -304,6 +302,7 @@ footer {
       display: flex;
       align-items: center;
       gap: 8px;
+      font-size: 14px;
 
       a {
         color: #fff;
@@ -317,6 +316,99 @@ footer {
 
     p {
       margin: 16px 0 0;
+      font-size: 14px;
+    }
+  }
+}
+
+#cartModal {
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f3f3f3;
+
+    img {
+      width: 140px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .cart-item-details {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      h6 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+        color: #f54a00;
+      }
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fafafa;
+        color: #f54a00;
+        font-size: 14px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+      }
+
+      .total-price {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000000;
+        padding-inline-start: 12px;
+      }
+    }
+  }
+
+  .checkout {
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1f2937;
+      margin: 0;
+
+      span {
+        font-size: 18px;
+        font-weight: 700;
+        color: #f54a00;
+      }
+    }
+
+    button {
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #ffffff;
+      transition: all 0.3s ease-in-out;
+      background: #000000;
+      margin-inline-start: auto;
     }
   }
 }
