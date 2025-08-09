@@ -89,8 +89,8 @@
                     </div>
 
                     <div class="view_method">
-                        <button id="grid_view">
-                            <i class="fa-regular fa-th"></i>
+                        <button class="active" id="grid_view">
+                            <i class="fa-regular fa-grid-2"></i>
                         </button>
 
                         <button id="list_view">
@@ -156,7 +156,7 @@
         <section class="menu">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-6 p-2">
+                    <div class="col-lg-3 col-6 p-2 grid_item">
                         <div class="menu_item">
                             <div class="menu_item_img">
                                 <img src="images/product.jpg" alt="Argana Falafel">
@@ -175,29 +175,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-6 p-2">
-                        <div class="menu_item">
-                            <div class="menu_item_img">
-                                <img src="images/product.jpg" alt="Argana Falafel">
-                                <span class="vegiterian">
-                                    <img src="/images/vegiterian.svg" alt="Vegiterian"> Vegiterian
-                                </span>
-                            </div>
-
-                            <div class="menu_item_info">
-                                <h3>Argana Falafel</h3>
-                                <p>Freshly prepared falafel with a blend of spices</p>
-                                <div class="price_btn">
-                                    <span>$10.99</span>
-                                    <button data-bs-toggle="modal" data-bs-target="#cartModal">
-                                        <i class="fa-regular fa-cart-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-6 p-2">
+                    <div class="col-lg-3 col-6 p-2 grid_item">
                         <div class="menu_item">
                             <div class="menu_item_img">
                                 <img src="images/product.jpg" alt="Argana Falafel">
@@ -219,26 +197,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-6 p-2">
-                        <div class="menu_item">
-                            <div class="menu_item_img">
-                                <img src="images/product.jpg" alt="Argana Falafel">
-                            </div>
-
-                            <div class="menu_item_info">
-                                <h3>Argana Falafel</h3>
-                                <p>Freshly prepared falafel with a blend of spices</p>
-                                <div class="price_btn">
-                                    <span>$10.99</span>
-                                    <button data-bs-toggle="modal" data-bs-target="#cartModal">
-                                        <i class="fa-regular fa-cart-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-6 p-2">
+                    <div class="col-lg-3 col-6 p-2 grid_item">
                         <div class="menu_item">
                             <div class="menu_item_img">
                                 <img src="images/product.jpg" alt="Argana Falafel">
@@ -260,7 +219,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-6 p-2">
+                    <div class="col-lg-3 col-6 p-2 grid_item">
                         <div class="menu_item">
                             <div class="menu_item_img">
                                 <img src="images/product.jpg" alt="Argana Falafel">
@@ -279,7 +238,29 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-6 p-2">
+                    <div class="col-lg-3 col-6 p-2 grid_item">
+                        <div class="menu_item">
+                            <div class="menu_item_img">
+                                <img src="images/product.jpg" alt="Argana Falafel">
+                                <span class="vegiterian">
+                                    <img src="/images/vegiterian.svg" alt="Vegiterian"> Vegiterian
+                                </span>
+                            </div>
+
+                            <div class="menu_item_info">
+                                <h3>Argana Falafel</h3>
+                                <p>Freshly prepared falafel with a blend of spices</p>
+                                <div class="price_btn">
+                                    <span>$10.99</span>
+                                    <button data-bs-toggle="modal" data-bs-target="#cartModal">
+                                        <i class="fa-regular fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6 p-2 grid_item">
                         <div class="menu_item">
                             <div class="menu_item_img">
                                 <img src="images/product.jpg" alt="Argana Falafel">
@@ -298,7 +279,26 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-6 p-2">
+                    <div class="col-lg-3 col-6 p-2 grid_item">
+                        <div class="menu_item">
+                            <div class="menu_item_img">
+                                <img src="images/product.jpg" alt="Argana Falafel">
+                            </div>
+
+                            <div class="menu_item_info">
+                                <h3>Argana Falafel</h3>
+                                <p>Freshly prepared falafel with a blend of spices</p>
+                                <div class="price_btn">
+                                    <span>$10.99</span>
+                                    <button data-bs-toggle="modal" data-bs-target="#cartModal">
+                                        <i class="fa-regular fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6 p-2 grid_item">
                         <div class="menu_item">
                             <div class="menu_item_img">
                                 <img src="images/product.jpg" alt="Argana Falafel">
@@ -486,6 +486,42 @@
 
     <script src="js/main.js"></script>
     <script src="js/app.js"></script>
+
+    <script>
+        const gridBtn = document.getElementById("grid_view");
+        const listBtn = document.getElementById("list_view");
+        const gridItems = document.querySelectorAll(".grid_item");
+        const products = document.querySelectorAll(".menu_item");
+
+        listBtn.addEventListener("click", () => {
+            gridBtn.classList.remove("active");
+            listBtn.classList.add("active");
+
+            gridItems.forEach(item => {
+                item.classList.remove("col-lg-3");
+                item.classList.remove("col-6");
+                item.classList.add("col-12");
+            });
+
+            products.forEach(product => {
+                product.classList.add("horizontal");
+
+            });
+        });
+
+        gridBtn.addEventListener("click", () => {
+            listBtn.classList.remove("active");
+            gridBtn.classList.add("active");
+            gridItems.forEach(item => {
+                item.classList.remove("col-12");
+                item.classList.add("col-lg-3");
+                item.classList.add("col-6");
+            });
+            products.forEach(product => {
+                product.classList.remove("horizontal");
+            });
+        });
+    </script>
 </body>
 
 </html>

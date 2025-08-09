@@ -156,6 +156,11 @@ main {
           height: 20px;
           border-radius: 50%;
         }
+
+        &.active {
+          background: #f54a00;
+          color: #fff;
+        }
       }
     }
 
@@ -257,14 +262,38 @@ main {
             padding: 10px 16px;
             border-radius: 12px;
             font-size: 14px;
-            color: #ffffff;
+            color: #171616;
             transition: all 0.3s ease-in-out;
-            background: #202226;
+            border: 1px solid #f1f1f1;
             margin-inline-start: auto;
 
             &:hover {
               background: #f54a00;
+              border-color: #f54a00;
+              color: #fff;
             }
+          }
+        }
+      }
+
+      &.horizontal {
+        flex-direction: row;
+
+        .menu_item_img {
+          flex: 1;
+
+          .vegiterian {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: initial;
+          }
+        }
+
+        .menu_item_info {
+          flex: 3;
+          @media screen and (max-width: 768px) {
+            flex: 1;
           }
         }
       }
@@ -329,6 +358,9 @@ footer {
     gap: 16px;
     padding: 20px 0;
     border-bottom: 1px solid #f3f3f3;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
 
     img {
       width: 140px;

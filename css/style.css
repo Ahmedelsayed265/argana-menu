@@ -209,7 +209,6 @@ form .input_field textarea {
 form button {
   width: 100%;
   height: 48px;
-  margin-top: 12px;
   border-radius: 12px;
   background: #202226;
   color: #fff;
@@ -368,6 +367,10 @@ main .filter .view_method button span {
   height: 20px;
   border-radius: 50%;
 }
+main .filter .view_method button.active {
+  background: #f54a00;
+  color: #fff;
+}
 main .filter .swiper-slide {
   width: -moz-fit-content;
   width: fit-content;
@@ -458,13 +461,35 @@ main .menu .menu_item .menu_item_info .price_btn button {
   padding: 10px 16px;
   border-radius: 12px;
   font-size: 14px;
-  color: #ffffff;
+  color: #171616;
   transition: all 0.3s ease-in-out;
-  background: #202226;
+  border: 1px solid #f1f1f1;
   margin-inline-start: auto;
 }
 main .menu .menu_item .menu_item_info .price_btn button:hover {
   background: #f54a00;
+  border-color: #f54a00;
+  color: #fff;
+}
+main .menu .menu_item.horizontal {
+  flex-direction: row;
+}
+main .menu .menu_item.horizontal .menu_item_img {
+  flex: 1;
+}
+main .menu .menu_item.horizontal .menu_item_img .vegiterian {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: initial;
+}
+main .menu .menu_item.horizontal .menu_item_info {
+  flex: 3;
+}
+@media screen and (max-width: 768px) {
+  main .menu .menu_item.horizontal .menu_item_info {
+    flex: 1;
+  }
 }
 
 footer {
@@ -517,6 +542,11 @@ footer .copy p {
   gap: 16px;
   padding: 20px 0;
   border-bottom: 1px solid #f3f3f3;
+}
+@media screen and (max-width: 768px) {
+  #cartModal .cart-item {
+    flex-direction: column;
+  }
 }
 #cartModal .cart-item img {
   width: 140px;
