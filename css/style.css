@@ -332,25 +332,26 @@ main #cart_btn {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: linear-gradient(to right, #f54a00, #ff6b28);
-  padding: 8px 24px;
+  width: 48px;
+  height: 48px;
   z-index: 99;
-  border-radius: 60px;
+  border-radius: 50%;
   color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-main #cart_btn h6 {
-  margin: 0;
-  font-size: 14px;
-  text-align: start;
+  background: linear-gradient(to right, #f54a00, #ff6b28);
 }
 main #cart_btn span {
+  position: absolute;
+  top: -2px;
+  right: -4px;
   font-size: 12px;
-}
-main #cart_btn i {
-  font-size: 24px;
+  background: #fff;
+  color: #f54a00;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 main .filter {
   top: 0;
