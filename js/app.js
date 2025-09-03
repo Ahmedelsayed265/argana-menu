@@ -5,37 +5,9 @@ var categorySwiper = new Swiper('.category_swiper', {
 
 const gridBtn = document.getElementById("grid_view");
 const listBtn = document.getElementById("list_view");
-const gridItems = document.querySelectorAll(".grid_item");
-const products = document.querySelectorAll(".menu_item");
-
-listBtn.addEventListener("click", () => {
-  gridBtn.classList.remove("active");
-  listBtn.classList.add("active");
-
-  gridItems.forEach(item => {
-    item.classList.remove("col-lg-3");
-    item.classList.remove("col-6");
-    item.classList.add("col-12");
-  });
-
-  products.forEach(product => {
-    product.classList.add("horizontal");
-
-  });
-});
-
-gridBtn.addEventListener("click", () => {
-  listBtn.classList.remove("active");
-  gridBtn.classList.add("active");
-  gridItems.forEach(item => {
-    item.classList.remove("col-12");
-    item.classList.add("col-lg-3");
-    item.classList.add("col-6");
-  });
-  products.forEach(product => {
-    product.classList.remove("horizontal");
-  });
-});
+const container = document.getElementById("menu_container");
+const searchInput = document.getElementById("search_input");
+const categoryBtns = document.querySelectorAll(".category_btn");
 
 const productsMap = [
   // Wraps
@@ -89,10 +61,7 @@ const productsMap = [
   { name: "Fresh Baked Brownies", price: "5.50", category: "desserts", vegetarian: true, img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" }
 ];
 
-const container = document.getElementById("menu_container");
-const searchInput = document.getElementById("search_input");
-const categoryBtns = document.querySelectorAll(".category_btn");
-
+// Render products
 function renderProducts(filter = "all", search = "") {
   container.innerHTML = "";
   let filtered = productsMap.filter(p =>
@@ -104,28 +73,29 @@ function renderProducts(filter = "all", search = "") {
     const card = document.createElement("div");
     card.className = "col-lg-3 col-6 p-2 grid_item";
     card.innerHTML = `
-        <div class="menu_item">
-          <div class="menu_item_img">
-            <img src="${p.img}" alt="${p.name}">
-            ${p.vegetarian ? `<span class="vegiterian"><img src="/images/vegiterian.svg" alt="Vegetarian"> Vegetarian</span>` : ""}
-          </div>
-          <div class="menu_item_info">
-            <h3>${p.name}</h3>
-            <div class="price_btn">
-              <span>$${p.price}</span>
-              <button data-bs-toggle="modal" data-bs-target="#cartModal">
-                <i class="fa-regular fa-cart-plus"></i>
-              </button>
-            </div>
+      <div class="menu_item">
+        <div class="menu_item_img">
+          <img src="${p.img}" alt="${p.name}">
+          ${p.vegetarian ? `<span class="vegiterian"><img src="/images/vegiterian.svg" alt="Vegetarian"> Vegetarian</span>` : ""}
+        </div>
+        <div class="menu_item_info">
+          <h3>${p.name}</h3>
+          <div class="price_btn">
+            <span>$${p.price}</span>
+            <button data-bs-toggle="modal" data-bs-target="#cartModal">
+              <i class="fa-regular fa-cart-plus"></i>
+            </button>
           </div>
         </div>
-      `;
+      </div>
+    `;
     container.appendChild(card);
   });
 }
 
 renderProducts();
 
+// Category filter
 categoryBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelector(".category_btn.active").classList.remove("active");
@@ -134,7 +104,23 @@ categoryBtns.forEach(btn => {
   });
 });
 
+// Search filter
 searchInput.addEventListener("input", () => {
   const activeCategory = document.querySelector(".category_btn.active").dataset.filter;
   renderProducts(activeCategory, searchInput.value);
+});
+
+// View toggle
+listBtn.addEventListener("click", () => {
+  gridBtn.classList.remove("active");
+  listBtn.classList.add("active");
+  container.classList.add("list-view");
+  container.classList.remove("grid-view");
+});
+
+gridBtn.addEventListener("click", () => {
+  listBtn.classList.remove("active");
+  gridBtn.classList.add("active");
+  container.classList.add("grid-view");
+  container.classList.remove("list-view");
 });
