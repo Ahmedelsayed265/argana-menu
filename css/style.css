@@ -299,7 +299,23 @@ header .hero-content p {
   font-size: 1rem;
   color: #ffffff;
   max-width: 700px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 8px;
+}
+header .hero-content .links {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+header .hero-content .links a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 header .hero-content .hero-buttons {
   display: flex;
