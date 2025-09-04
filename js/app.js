@@ -8,6 +8,7 @@ const listBtn = document.getElementById("list_view");
 const container = document.getElementById("menu_container");
 const searchInput = document.getElementById("search_input");
 const categoryBtns = document.querySelectorAll(".category_btn");
+const categoryText = document.getElementById("category_text");
 
 const productsMap = [
   // Wraps
@@ -61,6 +62,17 @@ const productsMap = [
   { name: "Fresh Baked Brownies", price: "5.50", category: "desserts", vegetarian: true, img: "/images/product.jpg" }
 ];
 
+const categoryDescriptions = {
+  wraps: "All served with lettuce, tomato, pickles, and tahini sauce",
+  special: "All served with rice, salad, and tahini sauce",
+  bowls: "All served with garbanzo beans, lettuce, hummus, pickles, tabouleh, and tzatziki dressing",
+  salads: "Served with oil vinaigrette or lemon dressing, depending on the salad",
+  entrees: "Daily Moroccan hot entrees served with rice, couscous, or salad",
+  drinks: "Refreshing Moroccan drinks and hot beverages",
+  desserts: "Sweet traditional Moroccan desserts",
+  all: ""
+};
+
 // Render products
 function renderProducts(filter = "all", search = "") {
   container.innerHTML = "";
@@ -91,11 +103,12 @@ function renderProducts(filter = "all", search = "") {
     `;
     container.appendChild(card);
   });
+
+  categoryText.textContent = categoryDescriptions[filter] || "";
 }
 
 renderProducts();
 
-// Category filter
 categoryBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelector(".category_btn.active").classList.remove("active");
@@ -104,13 +117,11 @@ categoryBtns.forEach(btn => {
   });
 });
 
-// Search filter
 searchInput.addEventListener("input", () => {
   const activeCategory = document.querySelector(".category_btn.active").dataset.filter;
   renderProducts(activeCategory, searchInput.value);
 });
 
-// View toggle
 listBtn.addEventListener("click", () => {
   gridBtn.classList.remove("active");
   listBtn.classList.add("active");

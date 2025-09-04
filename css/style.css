@@ -223,6 +223,11 @@ form button:hover {
   background: #181412;
 }
 
+#category_text {
+  width: min(100% - 16px, 600px);
+  margin: 0 auto;
+}
+
 header {
   position: relative;
   height: 28rem;
